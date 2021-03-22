@@ -1,0 +1,24 @@
+.app {
+  margin: 100px;
+}
+
+.test {
+  transition-duration: 300ms;
+  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+  background-color: #1db954;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 32px;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.test:hover,
+.test:focus {
+  transition-duration: 500ms;
+  box-shadow: 0 0.25rem 0.75rem 0 #777777;
+}
