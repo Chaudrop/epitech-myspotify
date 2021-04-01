@@ -1,0 +1,11 @@
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  margin: 0;
+}
+
+.app {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #121212);
+}

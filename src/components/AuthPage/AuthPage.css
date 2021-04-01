@@ -1,15 +1,3 @@
-html,
-body,
-#root,
-.app {
-  height: 100%;
-  margin: 0;
-}
-
-.app {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), #121212);
-}
-
 .login-button {
   transition-duration: 300ms;
   font-family: 'Rubik', Arial, Helvetica, sans-serif;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import { Container, Typography } from '@material-ui/core';
 import { SpotifyAuth, Scopes } from 'react-spotify-auth';
@@ -20,27 +21,24 @@ const getParamValues = url => {
 };
 
 const AuthPage = props => {
-  const { authToken, setAuthToken, logOut } = props;
+  const { authToken, setAuthToken } = props;
   const tokenFromRedirect = getParamValues(window.location.hash).access_token;
   if (!authToken && tokenFromRedirect) {
     setAuthToken(tokenFromRedirect);
   }
   return (
-    <div className="app">
+    <div>
       {authToken ? (
-        <>
-          <button onClick={logOut}>logout</button>
-          You are authorized with token: {authToken}
-        </>
+        <Redirect to={'/search'} />
       ) : (
         <Container maxWidth="md" className="login-page-container">
           <Typography noWrap className="my-spotify-title" variant="h1" align="center">
             MySpotify
           </Typography>
           <SpotifyAuth
-            redirectUri="http://localhost:3000/test"
-            clientID="908535d088d34756a941e90699f6db68"
-            scopes={[Scopes.userReadPrivate, 'user-read-email']}
+            redirectUri="http://localhost:3000/login"
+            clientID={process.env.REACT_APP_SPOTIFY_CLIENT_ID}
+            scopes={[Scopes.userReadPrivate]}
             btnClassName="login-button"
           />
         </Container>
@@ -55,7 +53,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   setAuthToken: AuthServices.setToken,
-  logOut: AuthServices.logOut,
 };
 
 const connectedAuthPage = connect(mapStateToProps, mapDispatchToProps)(AuthPage);
