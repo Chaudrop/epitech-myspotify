@@ -9,8 +9,9 @@
   margin: auto;
 }
 
-.logout {
-  display: flex;
-  height: 50%;
-  margin: auto;
+.player {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }

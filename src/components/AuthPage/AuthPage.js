@@ -38,7 +38,7 @@ const AuthPage = props => {
           <SpotifyAuth
             redirectUri="http://localhost:3000/login"
             clientID={process.env.REACT_APP_SPOTIFY_CLIENT_ID}
-            scopes={[Scopes.userReadPrivate]}
+            scopes={[Scopes.streaming]}
             btnClassName="login-button"
           />
         </Container>
