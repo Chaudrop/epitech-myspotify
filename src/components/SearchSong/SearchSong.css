@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  height: 5rem;
+}
+
+.searchbar {
+  display: flex;
+  height: 50%;
+  margin: auto;
+}
+
+.logout {
+  display: flex;
+  height: 50%;
+  margin: auto;
+}
